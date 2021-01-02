@@ -19,10 +19,11 @@ int binarySearch(T data[], int n, int target) {
             return mid;
         }
 
+        // [l...mid...r]
         if(target > data[mid]) {
-            l = mid + 1;
+            l = mid + 1; // 在[mid + 1, r]之间寻找target
         } else {
-            r = mid - 1;
+            r = mid - 1; // 在[l, mid - 1]之间寻找target
         }
     }
 
