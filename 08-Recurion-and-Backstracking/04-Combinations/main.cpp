@@ -15,18 +15,10 @@ private:
     void generateCombinations(int n, int k, int start, vector<int>& c) {
         if(c.size() == k) {
             res.emplace_back(c);
-            cout << "[";
-            for(auto ce : c) {
-                cout << ce << " ";
-            }
-            cout << "]";
-            cout << endl;
             return;
         }
 
-        cout << "start: " << start << endl;
         for(int i = start; i <= n; i++) {
-            cout << "i: " << i << endl;
             c.emplace_back(i);
             generateCombinations(n, k, i + 1, c);
             c.pop_back();
